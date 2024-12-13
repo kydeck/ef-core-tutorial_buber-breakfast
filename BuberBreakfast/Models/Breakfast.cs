@@ -12,15 +12,22 @@ public class Breakfast
     public const int MinDescriptionLength = 50;
     public const int MaxDescriptionLength = 150;
 
-    public Guid Id { get; }
-    public string Name { get; }
-    public string Description { get; }
-    public DateTime StartDateTime { get; }
-    public DateTime EndDateTime { get; }
-    public DateTime LastModifiedDateTime { get; }
-    public List<string> Savory { get; }
-    public List<string> Sweet { get; }
+    // When making the migration definition, EF core will iterate over all of these properties to create a definition of the database
+    // This requires set/private set;
+    public Guid Id { get; private set; }
+    public string Name { get; private set; }
+    public string Description { get; private set; }
+    public DateTime StartDateTime { get; private set; }
+    public DateTime EndDateTime { get; private set; }
+    public DateTime LastModifiedDateTime { get; private set; }
+    public List<string> Savory { get; private set; }
+    public List<string> Sweet { get; private set; }
 
+    
+    // Add generic constructor for EF core
+    private Breakfast() { }
+
+    // By default EF doesn't know how to deal with these arguments in the contstructor, so, create generic constructor above
     private Breakfast(
         Guid id,
         string name,
