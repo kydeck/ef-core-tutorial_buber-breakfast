@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuberBreakfast.Contracts", "BuberBreakfast.Contracts\BuberBreakfast.Contracts.csproj", "{5D9C4635-C1E6-45F5-80C9-B3A9B14DD4B8}"
 EndProject
@@ -12,9 +12,6 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5D9C4635-C1E6-45F5-80C9-B3A9B14DD4B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5D9C4635-C1E6-45F5-80C9-B3A9B14DD4B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
@@ -24,5 +21,8 @@ Global
 		{22A1701F-395D-43EA-B4C9-D4F30718A0D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22A1701F-395D-43EA-B4C9-D4F30718A0D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22A1701F-395D-43EA-B4C9-D4F30718A0D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
