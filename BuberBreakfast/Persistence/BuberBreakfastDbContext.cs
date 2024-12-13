@@ -12,13 +12,14 @@ namespace BuberBreakfast.Persistence
 
         public DbSet<Breakfast> Breakfasts { get; set; } = null;
 
-        // Use to define primary keys for: one to many relationships of classes, IE: Class { List<T> }
-        /* Simple example 
+        // Use to map Class properties to DB provider behavior/definitions
+            // Use to define primary keys for: one to many relationships of classes, IE: Class { List<T> }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Breakfast>()
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(BuberBreakfastDbContext).Assembly);
         }
-        */
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
