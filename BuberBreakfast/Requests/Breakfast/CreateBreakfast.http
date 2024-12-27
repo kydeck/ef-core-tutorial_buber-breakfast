@@ -1,11 +1,9 @@
-@id=55373792-d079-431b-a5c1-2c527647f3c5
-
-PUT http://localhost:5286/breakfasts/{{id}}
+POST http://localhost:5286/breakfasts
 Content-Type: application/json
 
 {
-    "name": "Vegan Sunshine 2",
-    "description": "Vegan everything! Join us for a healthy breakfast..",
+    "name": "Vegan breakfast",
+    "description": "Vegan breakfast with outmeal, avocado toast, omelette, salad. And more!",
     "startDateTime": "2022-04-08T08:00:00",
     "endDateTime": "2022-04-08T11:00:00",
     "savory": [
@@ -18,3 +16,7 @@ Content-Type: application/json
         "Cookie"
     ]
 }
+
+###
+
+GET https://localhost:7094/Breakfasts/e35daaba-5a9e-43a2-9305-3dead8296fe0

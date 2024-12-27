@@ -2,6 +2,7 @@ using BuberBreakfast.Models;
 using BuberBreakfast.Persistence;
 using BuberBreakfast.ServiceErrors;
 using ErrorOr;
+using Microsoft.EntityFrameworkCore;
 
 namespace BuberBreakfast.Services.Breakfasts;
 
@@ -53,7 +54,9 @@ public class BreakfastService : IBreakfastService
 
     public ErrorOr<UpsertedBreakfast> UpsertBreakfast(Breakfast breakfast)
     {
-        var isNewlyCreated = _dbContext.Breakfasts.Find(breakfast.Id) is not Breakfast;
+        // EF tracks all objects by default, so passing in a "new" breakfast with the ID of an existing breakfast makes it sad.
+        // Updating method to be ".Any()" to not run into issues with trying to work on a duplicate tracked entity, but instead work on the only tracked entity in the DB
+        var isNewlyCreated = !_dbContext.Breakfasts.Any(b => b.Id == breakfast.Id);
 
         if (isNewlyCreated)
         {
